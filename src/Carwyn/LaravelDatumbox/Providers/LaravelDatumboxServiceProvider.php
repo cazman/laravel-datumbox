@@ -1,6 +1,6 @@
 <?php namespace Carwyn\LaravelDatumbox\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\ServiceProvider, App, Config;
 
 class LaravelDatumboxServiceProvider extends ServiceProvider {
 
@@ -18,7 +18,13 @@ class LaravelDatumboxServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('carwyn/laravel-datum-box');
+		$this->package('carwyn/laravel-datumbox');
+
+		App::bind('Datumbox', function(){
+			return new \Carwyn\LaravelDatumbox\Lib\DatumboxAPI(
+				Config::get('laravel-datumbox::api_key')
+			);
+		});
 	}
 
 	/**
@@ -26,12 +32,7 @@ class LaravelDatumboxServiceProvider extends ServiceProvider {
 	 *
 	 * @return void
 	 */
-	public function register()
-	{
-		$this->app->bind('Datumbox', function(){
-			return new \Carwyn\LaravelDatumbox\Lib\DatumboxAPI();
-		});
-	}
+	public function register(){}
 
 	/**
 	 * Get the services provided by the provider.
