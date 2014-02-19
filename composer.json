@@ -1,10 +1,11 @@
 {
-    "name": "carwyn/laravel-datum-box",
-    "description": "",
+    "name": "carwyn/laravel-datumbox",
+    "description": "Lets you use the datumbox sentiment analysis API in laravel with a 
+    conventient facade accessor.",
     "authors": [
         {
-            "name": "",
-            "email": ""
+            "name": "Carwyn Stephen",
+            "email": "cstephen@carwynstephen.com"
         }
     ],
     "require": {
@@ -16,7 +17,7 @@
             "src/migrations"
         ],
         "psr-0": {
-            "Carwyn\\LaravelDatumBox\\": "src/"
+            "Carwyn\\LaravelDatumbox\\": "src/"
         }
     },
     "minimum-stability": "stable"

@@ -1,8 +1,8 @@
-<?php namespace Carwyn\LaravelDatumBox;
+<?php namespace Carwyn\LaravelDatumbox\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class LaravelDatumBoxServiceProvider extends ServiceProvider {
+class LaravelDatumboxServiceProvider extends ServiceProvider {
 
 	/**
 	 * Indicates if loading of the provider is deferred.
@@ -28,7 +28,9 @@ class LaravelDatumBoxServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		//
+		$this->app->bind('Datumbox', function(){
+			return new \Carwyn\LaravelDatumbox\Lib\DatumboxAPI();
+		});
 	}
 
 	/**
