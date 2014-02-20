@@ -18,7 +18,7 @@ class LaravelDatumboxServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('carwyn/laravel-datumbox');
+		$this->package('carwyn/laravel-datumbox', 'carwyn/laravel-datumbox',  __DIR__.'/../../../');
 	}
 
 	/**
@@ -30,7 +30,7 @@ class LaravelDatumboxServiceProvider extends ServiceProvider {
 	{
 		$this->app->bind('Datumbox', function($app){
 			return new \Carwyn\LaravelDatumbox\Lib\DatumboxAPI(
-				$this->app['config']->get('Carwyn/LaravelDatumbox::config.api_key')
+				$this->app['config']['carwyn/laravel-datumbox::api_key']
 			);
 		});
 	}
