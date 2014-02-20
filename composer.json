@@ -2,6 +2,7 @@
     "name": "carwyn/laravel-datumbox",
     "description": "Lets you use the datumbox sentiment analysis API in laravel with a 
     conventient facade accessor.",
+    "tags": ["Laravel-4", "Sentiment Analysis", "Datumbox"],
     "authors": [
         {
             "name": "Carwyn Stephen",
