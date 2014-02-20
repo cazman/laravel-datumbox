@@ -10,7 +10,7 @@
 class DatumboxAPI {
     const version='1.0';
     
-    protected $api_key;
+    public $api_key;
     
     /**
     * Constructor
@@ -46,6 +46,10 @@ class DatumboxAPI {
         unset($ch);
 
         return $jsonreply;
+    }
+
+    public function getAPIKey() {
+        return $this->api_key;
     }
     
     /**
