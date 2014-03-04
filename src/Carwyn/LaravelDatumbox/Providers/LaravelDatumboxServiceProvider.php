@@ -28,7 +28,7 @@ class LaravelDatumboxServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app->bind('Datumbox', function($app){
+		$this->app->singleton('Datumbox', function($app){
 			return new \Carwyn\LaravelDatumbox\Lib\DatumboxAPI(
 				$this->app['config']['carwyn/laravel-datumbox::api_key']
 			);
